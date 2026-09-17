@@ -103,12 +103,13 @@ const AWARD_DATA = [
 ];
 const MANAGEMENT_DATA = [
   ["President", "Mr. R. MUTHUSAMY", "assets/images/leaders/PRESIDENT.png"],
+  ["Secretary", "Mr. S. R. MADESHWARAN", "assets/images/leaders/SECRETARY.jpg"],
+  ["Treasurer", "Mr. P. KALIYANNAN", "assets/images/leaders/TREASURER.jpg"],
   ["Vice President", "Mr. P. KALIAPPAN", "assets/images/leaders/VICE-PRESIDENT-1.jpg"],
   ["Vice President", "Mr. C. RAVI", "assets/images/leaders/ravi.jpg"],
-  ["Secretary", "Mr. S. R. MADESHWARAN", "assets/images/leaders/SECRETARY.jpg"],
   ["Joint Secretary", "Mr. K. ARUNKUMAR", "assets/images/leaders/JOIN-SECRETARY-1.jpg"],
   ["Joint Secretary", "Mr. K. VASANTHA KUMAR", "assets/images/leaders/JOINT SECRETARY-2.jpg"],
-  ["Treasurer", "Mr. P. KALIYANNAN", "assets/images/leaders/TREASURER.jpg"],
+  
 ];
 const FAQ_DATA = [
   [
