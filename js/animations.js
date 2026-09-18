@@ -123,6 +123,11 @@ function runLoader() {
   setTimeout(() => {
     loader.classList.add("complete");
     if (status) status.textContent = lines[lines.length - 1];
-    setTimeout(() => loader.classList.add("done"), 520);
+    if (pctEl) pctEl.textContent = "100%";
+    if (barFill) barFill.style.width = "100%";
+    setTimeout(() => {
+      loader.classList.add("done");
+      document.body.classList.add("loaded");
+    }, 520);
   }, dur);
 }
