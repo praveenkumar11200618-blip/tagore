@@ -13,7 +13,7 @@ const EVENT_DATA = {
   association: "iGeN Technologies, Chennai",
   contact: { name: "Mr. M. Suresh", phone: "+91 9865654274" },
 
-  announcement: "Registrations are now open. Secure your team’s place before the deadline [2.10.2026].",
+  announcement: "Registrations are now open. Secure your team’s place before the deadline [25.10.2026].",
 };
 const NAV_DATA = [
   ["HOME", "home"],
@@ -93,14 +93,17 @@ const TIMELINE_DATA = [
   ["04:30 PM", "Awards & Closing", "upcoming", "Celebrate the teams and take the next step together.", "Seminar Hall"],
 ];
 const AWARD_DATA = [
-  "Best AI Innovation",
+  "Overall champion-Team",
+  "Runner-up",
+  "Second Runner-up",
+  "Best Engineering and Technology Solution",
   "Best Healthcare Solution",
   "Best Agriculture Solution",
-  "Best Business Innovation",
-  "Best Social Impact",
+  "Best Commerce Solution",
+  "Best Architecture Solution",
+  "Best Industry Solution",
   "Best UI/UX",
-  "Best Presentation",
-  "Jury Special Award",
+
 ];
 const MANAGEMENT_DATA = [
   ["President", "Mr. R. MUTHUSAMY", "assets/images/leaders/PRESIDENT.png"],

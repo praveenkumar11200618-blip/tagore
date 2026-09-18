@@ -40,8 +40,18 @@ body {
   background: var(--ink);
   color: #fff;
   text-align: center;
+  flex-wrap: wrap;
 }
-.announcement-bar p { margin: 0; font: 600 11px Inter, Arial, sans-serif; }
+.announcement-bar p {
+  margin: 0;
+  font: 600 11px Inter, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  line-height: 1.4;
+}
 .announcement-bar p span {
   margin-right: 12px;
   color: #ff5d5d;
