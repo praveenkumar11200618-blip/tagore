@@ -17,13 +17,11 @@ const EVENT_DATA = {
 };
 const NAV_DATA = [
   ["HOME", "home"],
-  ["ABOUT", "about"],
-  ["FORMAT", "format"],
+  ["FORMAT PPT", "format"],
   ["TRACKS", "tracks"],
   ["JOURNEY", "journey"],
   ["AWARDS", "awards"],
   ["LEADERSHIP", "leadership"],
-  ["FAQ", "faq"],
   ["CONTACT", "contact"],
 ];
 const TRACK_DATA = [
