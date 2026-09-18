@@ -105,13 +105,20 @@ body {
   position: fixed;
   inset: 0;
   z-index: 50;
-  background: #fff;
   display: grid;
-  place-content: center;
+  place-items: center;
+  background: #fff;
   text-align: center;
   transition:
     opacity 0.5s,
     visibility 0.5s;
+}
+.page-loader .loader-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(92vw, 440px);
 }
 .page-loader.done {
   opacity: 0;
@@ -132,8 +139,12 @@ body {
   color: var(--blue);
 }
 .loader-orb {
-  height: 100px;
   position: relative;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
 }
 .loader-orb b {
   position: absolute;
@@ -143,19 +154,33 @@ body {
   border-radius: 50%;
   background: radial-gradient(circle, #fff, #5bd3ff 40%, #1769ff);
   color: #fff;
+  overflow: hidden;
+  box-shadow: inset 0 0 16px rgba(255, 255, 255, 0.8);
+}
+.loader-orb b img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
 }
 .loader-orb i {
   position: absolute;
   left: 50%;
-  top: 5px;
-  width: 80px;
-  height: 80px;
-  margin-left: -40px;
+  top: 50%;
+  width: 90px;
+  height: 90px;
+  margin-left: -45px;
+  margin-top: -45px;
   border: 1px solid #51bce5;
   border-radius: 50%;
   animation: spin 1.4s linear infinite;
 }
 .loader-orb i + i {
+  width: 110px;
+  height: 110px;
+  margin-left: -55px;
+  margin-top: -55px;
   transform: rotateX(65deg);
   animation-direction: reverse;
 }
