@@ -411,7 +411,7 @@ nav a.active:after {
 .hero-date {
   display: block;
   color: var(--blue);
-  font: 700 10px "DM Mono";
+  font: 700 15px "DM Mono";
   letter-spacing: 0.16em;
   text-shadow: 0 0 12px rgba(36, 112, 255, 0.45);
 }
