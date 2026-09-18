@@ -143,8 +143,8 @@ body {
 }
 .loader-orb {
   position: relative;
-  width: 176px;
-  height: 176px;
+  width: clamp(134px, 28vw, 176px);
+  height: clamp(134px, 28vw, 176px);
   display: grid;
   place-items: center;
   margin-bottom: 18px;
@@ -152,7 +152,7 @@ body {
 }
 .loader-orb b {
   position: absolute;
-  inset: 36px;
+  inset: 30px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -164,8 +164,8 @@ body {
   overflow: hidden;
 }
 .loader-orb b img {
-  width: 72%;
-  height: 72%;
+  width: 70%;
+  height: 70%;
   object-fit: contain;
   display: block;
   border-radius: 50%;
@@ -175,20 +175,20 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 118px;
-  height: 118px;
-  margin-left: -59px;
-  margin-top: -59px;
+  width: clamp(92px, 18vw, 118px);
+  height: clamp(92px, 18vw, 118px);
+  margin-left: calc(clamp(92px, 18vw, 118px) / -2);
+  margin-top: calc(clamp(92px, 18vw, 118px) / -2);
   border: 1px solid rgba(81, 188, 229, 0.9);
   border-radius: 50%;
   box-shadow: 0 0 18px rgba(81, 188, 229, 0.35);
   animation: spin 1.4s linear infinite;
 }
 .loader-orb i + i {
-  width: 150px;
-  height: 150px;
-  margin-left: -75px;
-  margin-top: -75px;
+  width: clamp(122px, 24vw, 150px);
+  height: clamp(122px, 24vw, 150px);
+  margin-left: calc(clamp(122px, 24vw, 150px) / -2);
+  margin-top: calc(clamp(122px, 24vw, 150px) / -2);
   border-color: rgba(94, 130, 255, 0.7);
   transform: rotateX(65deg);
   animation-direction: reverse;
