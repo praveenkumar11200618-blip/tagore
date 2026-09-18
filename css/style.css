@@ -40,18 +40,8 @@ body {
   background: var(--ink);
   color: #fff;
   text-align: center;
-  flex-wrap: wrap;
 }
-.announcement-bar p {
-  margin: 0;
-  font: 600 11px Inter, Arial, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 4px 10px;
-  line-height: 1.4;
-}
+.announcement-bar p { margin: 0; font: 600 11px Inter, Arial, sans-serif; }
 .announcement-bar p span {
   margin-right: 12px;
   color: #ff5d5d;
@@ -411,7 +401,7 @@ nav a.active:after {
 .hero-date {
   display: block;
   color: var(--blue);
-  font: 700 15px "DM Mono";
+  font: 700 10px "DM Mono";
   letter-spacing: 0.16em;
   text-shadow: 0 0 12px rgba(36, 112, 255, 0.45);
 }

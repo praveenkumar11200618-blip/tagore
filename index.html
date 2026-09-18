@@ -25,9 +25,20 @@
     <button id="announcement-close" type="button" aria-label="Dismiss announcement">&times;</button>
   </aside>
   <div class="page-loader" aria-label="Loading">
-    <div class="loader-orb"><i></i><i></i><b></b></div>
-    <p>INITIALIZING INNOVATION SYSTEM...</p>
-    <strong>AI FUSION <em>2026</em></strong>
+    <div class="loader-orb" aria-hidden="true">
+      <span class="loader-halo"></span>
+      <span class="loader-scan"></span>
+      <i></i>
+      <i></i>
+      <span class="loader-e" style="--deg:0deg"></span>
+      <span class="loader-e" style="--deg:120deg"></span>
+      <span class="loader-e" style="--deg:240deg"></span>
+      <b>AI</b>
+    </div>
+    <strong class="loader-wordmark">AI FUSION <em>2026</em></strong>
+    <p class="loader-status">INITIALIZING INNOVATION SYSTEM...</p>
+    <div class="loader-bar" aria-hidden="true"><i></i></div>
+    <small class="loader-pct">0%</small>
   </div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
@@ -43,7 +54,7 @@
     <div class="header-association" aria-label="In association with iGen Technologies">
       <span>IN ASSOCIATION WITH</span>
       <img src="assets/images/partners/igen-technologies.jpg" alt="" />
-      <strong>iGeN Technologies</strong>
+      <strong>iGeN</strong>
     </div>
     <a class="button button-small magnetic" data-register href="#">REGISTER NOW <b>→</b></a>
   </header>

@@ -27,19 +27,6 @@ textarea {
   overflow-x: hidden;
 }
 
-/* Prevent mobile browsers from auto-inflating text (keeps px layouts pixel-perfect) */
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-/* Keep anchored sections clear of the fixed announcement bar + header */
-html {
-  scroll-padding-top: 104px;
-}
-section[id] {
-  scroll-margin-top: 104px;
-}
 @media (max-width: 1100px) {
   .site-header {
     gap: 14px;
@@ -80,15 +67,7 @@ section[id] {
 }
 
 @media (max-width: 900px) {
-  .announcement-bar {
-    justify-content: flex-start;
-    text-align: left;
-    padding-right: 40px;
-  }
-  .announcement-bar p {
-    justify-content: flex-start;
-    text-align: left;
-  }
+  .announcement-bar { justify-content: flex-start; text-align: left; }
   .hero-campus-bg {
     inset: 100px -20px 20px 8%;
     opacity: 0.5;
@@ -216,22 +195,9 @@ section[id] {
 }
 
 @media (max-width: 520px) {
-  .announcement-bar {
-    min-height: 52px;
-    padding: 8px 42px 8px 12px;
-  }
-  .announcement-bar p {
-    font-size: 9px;
-    line-height: 1.35;
-    justify-content: flex-start;
-  }
-  .announcement-bar p span {
-    display: inline-block;
-    margin: 0;
-  }
-  .announcement-bar p b {
-    display: inline;
-  }
+  .announcement-bar { min-height: 48px; padding-right: 42px; }
+  .announcement-bar p { font-size: 10px; line-height: 1.35; }
+  .announcement-bar p span { display: block; margin: 0 0 2px; }
   .site-header { top: 62px; }
 }
 @media (min-width: 901px) {
@@ -398,7 +364,7 @@ section[id] {
 
 @media (max-width: 380px) {
   .section { padding-left: 16px; padding-right: 16px; }
-  .hero h1 { font-size: clamp(44px, 15vw, 62px); }
+  .hero h1 { font-size: 62px; }
   .brand { font-size: 15px; }
   .header-association { display: none; }
   .leaders-grid { grid-template-columns: 1fr; }
@@ -419,52 +385,4 @@ section[id] {
   .portrait {
     height: 195px;
   }
-}
-/* ==========================================================================
-   Adaptive refinements for phones, tablets & large screens
-   ========================================================================== */
-
-@media (max-width: 767px) {
-  .modal {
-    padding: 16px;
-  }
-  .modal-box {
-    max-height: calc(100dvh - 32px);
-    overflow-y: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .section { padding: 90px 20px; }
-  .hero { gap: 20px; }
-  .hero h1 { font-size: clamp(48px, 14.5vw, 76px); }
-  .hero-tagline,
-  .hero-place { font-size: 11px; }
-  .hero-actions {
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 12px;
-  }
-  .hero-actions .button { width: 100%; }
-  .countdown { justify-content: center; gap: 8px; }
-  .countdown-units { gap: 7px; }
-  .countdown-units > div { gap: 2px; }
-  .countdown-units b { font-size: 30px; }
-  .page-loader strong { font-size: 34px; }
-  .track-modal .modal-box { max-height: calc(100dvh - 40px); }
-  nav a { padding: 15px 16px; font-size: 11px; }
-}
-
-@media (max-width: 360px) {
-  .section { padding: 84px 14px; }
-  .hero h1 { font-size: clamp(40px, 15vw, 52px); }
-  .hero-art { height: 290px; transform: scale(0.78); }
-  .countdown-units b { font-size: 26px; }
-  .countdown-units > div { min-width: 28px; }
-  footer { padding: 40px 16px; }
-  .footer-links { grid-template-columns: 1fr; }
-}
-
-@media (min-width: 1600px) {
-  .section { padding-left: 64px; padding-right: 64px; }
 }
