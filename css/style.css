@@ -254,23 +254,25 @@ nav a,
   text-decoration: none;
   color: var(--muted);
   position: relative;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 nav a {
   padding: 10px 10px;
   border-radius: 999px;
   font-size: clamp(9px, .85vw, 13px);
-  transition: color 0.2s ease, background 0.2s ease;
 }
 nav a.active,
 nav a:hover {
   color: var(--blue);
-  background: rgba(18, 147, 233, 0.274);
+  background: rgba(18, 147, 233, 0.12);
+  transform: translateY(-1px);
 }
-nav a.active:after {
+nav a.active:after,
+nav a:hover:after {
   content: "";
   position: absolute;
   height: 2px;
-  background: var(--blue);
+  background: linear-gradient(90deg, var(--blue), #62d4ff);
   left: 14px;
   right: 14px;
   bottom: 5px;
@@ -352,10 +354,12 @@ nav a.active:after {
   font-weight: bold;
   letter-spacing: 0.06em;
   box-shadow: 0 12px 25px #1769ff35;
-  transition: 0.25s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 .button:hover {
+  transform: translateY(-2px) scale(1.01);
   box-shadow: 0 18px 32px #1769ff45;
+  filter: saturate(1.08);
 }
 .button-small {
   padding: 11px 14px;
@@ -787,6 +791,10 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: end;
+  gap: 20px;
+}
+.section-heading h2 {
+  margin: 0;
 }
 .section-heading > p {
   max-width: 300px;
@@ -801,61 +809,114 @@ h2 {
 }
 .track-card {
   min-height: 340px;
-  padding: 28px;
+  padding: 0;
   position: relative;
   overflow: hidden;
   border-radius: var(--r);
-  background: linear-gradient(135deg, #fff, #edf7ff);
-  border: 1px solid #dceafb;
-  box-shadow: 0 8px 25px #1e65ac0a;
-  transition: 0.35s;
+  background:
+    linear-gradient(180deg, rgba(5, 18, 38, 0.08), rgba(5, 18, 38, 0.7)),
+    var(--track-image) center/cover no-repeat;
+  border: 1px solid rgba(154, 196, 255, 0.65);
+  box-shadow: 0 8px 25px rgba(30, 101, 172, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   text-align: left;
 }
 .track-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow);
+  box-shadow: 0 22px 38px rgba(25, 78, 155, 0.18);
+  border-color: rgba(95, 160, 255, 0.8);
 }
-.track-card:after {
+.track-card:before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at var(--x, 50%) var(--y, 50%),
-    #8fdfff42,
-    transparent 42%
-  );
+  background: linear-gradient(180deg, rgba(7, 21, 45, 0.08), rgba(7, 21, 45, 0.8));
   pointer-events: none;
+}
+.track-card-inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 340px;
+  padding: 24px 22px 18px;
 }
 .track-num {
   position: absolute;
-  right: 21px;
-  top: 10px;
-  font: 700 80px Space Grotesk;
-  color: #1769ff0d;
+  right: 18px;
+  top: 12px;
+  font: 700 72px Space Grotesk;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: -0.08em;
+}
+.track-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.track-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #f0f7ff;
+  font: 700 8px "DM Mono";
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 .track-card i {
-  font: 32px Space Grotesk;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  font: 26px Space Grotesk;
   font-style: normal;
-  color: var(--blue);
+  color: #fff;
+  box-shadow: inset 0 0 18px rgba(255,255,255,0.08);
 }
 .track-card h3 {
-  font: 700 25px/0.95 Space Grotesk;
-  margin: 35px 0 10px;
-  max-width: 230px;
+  font: 700 25px/1 Space Grotesk;
+  margin: 0 0 10px;
+  max-width: 250px;
+  color: #fff;
+  letter-spacing: -0.04em;
 }
 .track-card p {
+  margin: 0;
   font-size: 12px;
-  line-height: 1.6;
-  color: var(--muted);
-  max-width: 250px;
+  line-height: 1.7;
+  color: rgba(242, 246, 255, 0.92);
+  max-width: 260px;
 }
 .track-card ul {
   display: none;
+  margin: 16px 0 0;
   padding: 0;
   list-style: none;
-  color: #3964a3;
+  color: rgba(236, 244, 255, 0.94);
   font-size: 11px;
   line-height: 1.8;
+}
+.track-card ul li {
+  position: relative;
+  padding-left: 14px;
+}
+.track-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #8de1ff;
 }
 .track-card:hover ul {
   display: block;
@@ -1450,8 +1511,8 @@ footer {
   padding: 65px max(34px, calc((100% - 1172px) / 2));
   background: #fff;
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.2fr 1fr 1fr 1.4fr;
+  gap: 32px 24px;
   font-size: 12px;
   line-height: 1.7;
   color: var(--muted);
@@ -1461,6 +1522,45 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 9px;
+}
+.student-coordinators {
+  display: grid;
+  gap: 12px;
+  align-self: start;
+}
+.coordinator-title {
+  margin: 0;
+  font: 700 10px "DM Mono";
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.coordinator-list {
+  display: grid;
+  gap: 10px;
+}
+.coordinator-item {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f9fbff;
+}
+.coordinator-item strong {
+  font: 700 12px Space Grotesk;
+  letter-spacing: 0.04em;
+  color: var(--dark);
+  text-transform: uppercase;
+}
+.coordinator-item span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.coordinator-item a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
 }
 .credit {
   grid-column: 1/-1;

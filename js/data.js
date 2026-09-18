@@ -30,6 +30,7 @@ const TRACK_DATA = [
     "Build intelligent systems for tomorrow’s world.",
     "⌘",
     ["Smart Campus", "AI Automation", "IoT + AI", "Robotics", "Cybersecurity"],
+    "assets/images/tracks/engineering-technology.svg",
   ],
   [
     "Healthcare",
@@ -42,6 +43,7 @@ const TRACK_DATA = [
       "Mental Health Support",
       "Drug Discovery",
     ],
+    "assets/images/tracks/healthcare.svg",
   ],
   [
     "Agriculture",
@@ -53,18 +55,21 @@ const TRACK_DATA = [
       "Precision Farming",
       "Drone Applications",
     ],
+    "assets/images/tracks/agriculture.svg",
   ],
   [
     "Commerce",
     "Make every decision smarter and safer.",
     "◈",
     ["Algorithm Dynamic", "Demand forcasting", "Revenue growth", "Customer Behavior Analysis", "Price Optimization"],
+    "assets/images/tracks/commerce.svg",
   ],
   [
     "Architecture",
     "Shape spaces that understand people.",
     "⌂",
     ["Parametric Facade Design","Smart Buildings Design", "Sustainable Design", "AI Space Planning", "Urban Planing"],
+    "assets/images/tracks/architecture.svg",
   ],
   [
     "Industry",
@@ -75,8 +80,8 @@ const TRACK_DATA = [
       "Process Automation",
       "Quality Inspection",
       "Supply Chain Optimization",
-    
     ],
+    "assets/images/tracks/industry.svg",
   ],
 ];
 // Update this agenda manually as the event programme is confirmed.

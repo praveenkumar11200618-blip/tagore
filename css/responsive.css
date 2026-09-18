@@ -418,6 +418,9 @@ section[id] {
     padding: 48px 20px;
     gap: 25px;
   }
+  .student-coordinators {
+    grid-column: auto;
+  }
   .footer-links {
     grid-template-columns: repeat(3, auto);
   }
