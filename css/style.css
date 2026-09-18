@@ -42,7 +42,24 @@ body {
   text-align: center;
 }
 .announcement-bar p { margin: 0; font: 600 11px Inter, Arial, sans-serif; }
-.announcement-bar p span { margin-right: 12px; color: #8fd5ff; font: 700 9px "DM Mono"; letter-spacing: .12em; }
+.announcement-bar p span {
+  margin-right: 12px;
+  color: #ff5d5d;
+  font: 700 9px "DM Mono";
+  letter-spacing: .12em;
+  text-shadow:
+    0 0 6px rgba(255, 110, 110, 0.9),
+    0 0 12px rgba(255, 70, 70, 0.75),
+    0 0 18px rgba(255, 40, 40, 0.45);
+  animation: liveAlertBlinkRed 1.1s ease-in-out infinite alternate;
+}
+.announcement-bar p b {
+  color: #f3f7ff;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-shadow: none;
+  animation: none;
+}
 .announcement-bar button { position: absolute; right: 18px; border: 0; padding: 0; background: none; color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
 .announcement-bar[hidden] { display: none; }
 .section {
@@ -374,6 +391,19 @@ nav a.active:after {
   align-items: center;
   gap: 28px;
   margin-top: 29px;
+}
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.hero-date {
+  display: block;
+  color: var(--blue);
+  font: 700 10px "DM Mono";
+  letter-spacing: 0.16em;
+  text-shadow: 0 0 12px rgba(36, 112, 255, 0.45);
 }
 .text-link {
   font: 700 10px Inter;
