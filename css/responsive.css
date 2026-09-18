@@ -68,6 +68,11 @@ section[id] {
   .tracks-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .ppt-download-meta,
+  .ppt-download-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .leaders-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -338,6 +343,17 @@ section[id] {
   }
   .tracks-grid {
     grid-template-columns: 1fr;
+  }
+  .ppt-download-card {
+    padding: 18px 16px;
+  }
+  .ppt-file-icon {
+    width: 52px;
+    height: 52px;
+  }
+  .ppt-download-button {
+    width: 100%;
+    justify-self: stretch;
   }
   .track-card {
     min-height: 290px;

@@ -18,6 +18,7 @@ const EVENT_DATA = {
 const NAV_DATA = [
   ["HOME", "home"],
   ["ABOUT", "about"],
+  ["FORMAT", "format"],
   ["TRACKS", "tracks"],
   ["JOURNEY", "journey"],
   ["AWARDS", "awards"],
