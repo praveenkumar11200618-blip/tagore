@@ -10,7 +10,7 @@ const EVENT_DATA = {
   institution: "Tagore Institute of Engineering and Technology",
   address:
     "Deviyakurichi - 636 112, Thalaivasal (TK), Salem (DT), Tamil Nadu, India.",
-  association: "iGen Technologies",
+  association: "iGeN Technologies",
   contact: { name: "Mr. M. Suresh", phone: "+91 9865654274" },
   announcement: "Registrations are now open. Secure your team’s place before the deadline [20.10.2026].",
 };
