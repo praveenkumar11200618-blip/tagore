@@ -814,7 +814,7 @@ h2 {
   overflow: hidden;
   border-radius: var(--r);
   background:
-    linear-gradient(180deg, rgba(5, 18, 38, 0.08), rgba(5, 18, 38, 0.7)),
+    linear-gradient(180deg, rgba(4, 96, 234, 0.904), rgba(5, 18, 38, 0.7)),
     var(--track-image) center/cover no-repeat;
   border: 1px solid rgba(154, 196, 255, 0.65);
   box-shadow: 0 8px 25px rgba(30, 101, 172, 0.12);
@@ -827,7 +827,7 @@ h2 {
   border-color: rgba(95, 160, 255, 0.8);
 }
 .track-card:before {
-  content: "";
+  content: "ssdfs";
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(7, 21, 45, 0.08), rgba(7, 21, 45, 0.8));
@@ -841,7 +841,7 @@ h2 {
   flex-direction: column;
   justify-content: flex-end;
   min-height: 340px;
-  padding: 24px 22px 18px;
+  padding: 22px 22px 50px;
 }
 .track-num {
   position: absolute;
@@ -866,7 +866,7 @@ h2 {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255,255,255,0.18);
-  color: #f0f7ff;
+  color: #010d1c;
   font: 700 8px "DM Mono";
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -882,29 +882,30 @@ h2 {
   border: 1px solid rgba(255,255,255,0.18);
   font: 26px Space Grotesk;
   font-style: normal;
-  color: #fff;
+  color: #f00303;
   box-shadow: inset 0 0 18px rgba(255,255,255,0.08);
 }
 .track-card h3 {
   font: 700 25px/1 Space Grotesk;
   margin: 0 0 10px;
   max-width: 250px;
-  color: #fff;
+  color: #4b39f4;
   letter-spacing: -0.04em;
 }
 .track-card p {
   margin: 0;
   font-size: 12px;
   line-height: 1.7;
-  color: rgba(242, 246, 255, 0.92);
+  color: rgba(1, 7, 2, 0);
   max-width: 260px;
 }
 .track-card ul {
   display: none;
-  margin: 16px 0 0;
-  padding: 0;
+  font: 700 25px/1 Space Grotesk;
+  margin: 0 0 10px;
+  padding: 2px 13px 0 14px;
   list-style: none;
-  color: rgba(236, 244, 255, 0.94);
+  color: rgba(1, 0, 0, 0.94);
   font-size: 11px;
   line-height: 1.8;
 }
@@ -916,10 +917,10 @@ h2 {
   content: "•";
   position: absolute;
   left: 0;
-  color: #8de1ff;
+  color: #000000;
 }
 .track-card:hover ul {
-  display: block;
+  display:block;
 }
 .explore {
   position: absolute;
@@ -932,7 +933,7 @@ h2 {
   cursor: pointer;
   letter-spacing: .04em;
 }
-.explore:hover { color: var(--cyan); }
+.explore:hover { color: #000000; }
 .explore b { margin-left: 4px; font-size: 14px; }
 .track-modal .modal-box { max-width: 620px; }
 .track-modal-description { max-width: 500px; color: var(--muted); line-height: 1.7; }
