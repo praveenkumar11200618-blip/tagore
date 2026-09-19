@@ -87,7 +87,7 @@ const TRACK_DATA = [
 // Update this agenda manually as the event programme is confirmed.
 // status accepts: "complete", "live", or "upcoming".
 const TIMELINE_DATA = [
-  ["09:00 AM", "Registration & Check-in", "complete", "Collect your badge, team kit and programme guide.", "Main Entrance"],
+  ["09:00 AM", "Registration & Check-in", "upcoming", "Collect your badge, team kit and programme guide.", "Main Entrance"],
   ["10:00 AM", "Opening & Problem Brief", "upcoming", "Kick-off, challenge briefing and team formation.", "Seminar Hall"],
   ["11:00 AM", "Build Sprint Begins", "upcoming", "Turn your concept into a working AI prototype.", "Innovation Lab"],
   ["01:00 PM", "Mentor Checkpoint", "upcoming", "Get feedback on feasibility, impact and your demo plan.", "Innovation Lab"],

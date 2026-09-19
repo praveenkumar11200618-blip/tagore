@@ -26,7 +26,25 @@ function renderApp() {
   el("#tracks-grid").innerHTML = TRACK_DATA.map(
     (t, i) => {
       const [title, description, icon, themes, image] = t;
-      return `<article class="track-card tilt" style="--track-image: url('${image}');"><div class="track-card-inner"><span class="track-num">0${i + 1}</span><div class="track-header"><i>${icon}</i><span class="track-badge">AI TRACK</span></div><h3>${title}</h3><p>${description}</p><ul>${themes.map((a) => `<li>${a}</li>`).join("")}</ul><button class="explore track-details" data-track-index="${i}" type="button">VIEW DETAILS <b>→</b></button></div></article>`;
+      return `
+        <article class="track-card tilt" style="--track-image: url('${image}');">
+          <div class="track-card-inner">
+            <div class="track-header">
+              <span class="track-num">0${i + 1}</span>
+              <span class="track-badge">AI TRACK</span>
+            </div>
+            <div class="track-card-body">
+              <div class="track-icon-wrap"><i>${icon}</i></div>
+              <h3>${title}</h3>
+              <p>${description}</p>
+              <div class="track-card-tags">
+                ${themes.slice(0, 3).map((a) => `<span>${a}</span>`).join("")}
+              </div>
+            </div>
+            <button class="explore track-details" data-track-index="${i}" type="button">VIEW DETAILS <b>→</b></button>
+          </div>
+        </article>
+      `;
     },
   ).join("");
   els(".track-details").forEach((button) => {

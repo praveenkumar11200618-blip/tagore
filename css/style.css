@@ -827,7 +827,7 @@ h2 {
   border-color: rgba(95, 160, 255, 0.8);
 }
 .track-card:before {
-  content: "ssdfs";
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(7, 21, 45, 0.08), rgba(7, 21, 45, 0.8));
@@ -839,7 +839,7 @@ h2 {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   min-height: 340px;
   padding: 22px 22px 50px;
 }
@@ -905,7 +905,7 @@ h2 {
   margin: 0 0 10px;
   padding: 2px 13px 0 14px;
   list-style: none;
-  color: rgba(1, 0, 0, 0.94);
+  color: rgba(228, 22, 22, 0.94);
   font-size: 11px;
   line-height: 1.8;
 }
@@ -917,7 +917,7 @@ h2 {
   content: "•";
   position: absolute;
   left: 0;
-  color: #000000;
+  color: #fc0303;
 }
 .track-card:hover ul {
   display:block;
