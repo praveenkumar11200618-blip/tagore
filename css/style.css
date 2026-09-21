@@ -420,7 +420,7 @@ nav a:hover:after {
 .event-line {
   display: flex;
   gap: 16px;
-  font: 11px "DM Mono";
+  font: 25px "DM Mono";
   margin-top: 27px;
 }
 .event-line span + span {
