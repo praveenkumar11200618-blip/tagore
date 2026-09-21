@@ -1,11 +1,11 @@
 const EVENT_DATA = {
   name: "AI Fusion 2026",
   tagline: "Multidisciplinary AI Innovation Hackathon",
-  date: "30 September 2026",
+  date: "09 October 2026",
   time: "9:00 AM — 4:30 PM",
   registrationFee: "₹500",
   teamSize: "4 Members",
-  countdownTarget: "2026-09-30T09:00:00+05:30",
+  countdownTarget: "2026-10-09T09:00:00+05:30",
   registrationUrl: "https://forms.gle/dzrSLbb91cKUKD599",
   institution: "Tagore Institute of Engineering and Technology",
   address:
