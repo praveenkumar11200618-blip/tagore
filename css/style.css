@@ -1259,7 +1259,7 @@ h2 {
   transform: rotate(-12deg);
 }
 .trophy span {
-  font: 700 15px Space Grotesk;
+  font: 700 17px Space Grotesk;
   line-height: 0.8;
 }
 .awards-list p {
@@ -1276,7 +1276,6 @@ h2 {
 }
 .awards-list b {
   margin-left: auto;
-  font: 15px;
   color: var(--blue);
 }
 .leaders-grid {
