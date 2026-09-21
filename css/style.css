@@ -1276,6 +1276,7 @@ h2 {
 }
 .awards-list b {
   margin-left: auto;
+  font: 15px;
   color: var(--blue);
 }
 .leaders-grid {
