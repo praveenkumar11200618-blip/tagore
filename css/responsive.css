@@ -237,7 +237,41 @@ section[id] {
   .announcement-bar p b {
     display: inline;
   }
-  .site-header { top: 62px; }
+  .site-header {
+    top: 62px;
+    height: 58px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+  .brand {
+    max-width: 150px;
+    min-width: 0;
+    font-size: 11px;
+    letter-spacing: -0.03em;
+  }
+  .brand .institute-logo {
+    width: 28px;
+    height: 28px;
+  }
+  .header-association {
+    order: 2;
+    margin-left: 0;
+    margin-right: 0;
+    transform: scale(0.9);
+    transform-origin: left center;
+    justify-self: end;
+  }
+  .menu-button {
+    order: 3;
+    margin-left: auto;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+  .brand {
+    order: 1;
+    margin-right: 2px;
+  }
   .page-loader .loader-shell {
     width: min(90vw, 360px);
     padding: 8px 12px 2px;
@@ -283,21 +317,68 @@ section[id] {
     grid-template-columns: 25px;
   }
   .hero-campus-bg {
-    inset: 110px -20px 0 18%;
-    opacity: 0.28;
-    filter: saturate(0.65);
+    inset: 90px 0 10px 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    opacity: 0.62;
+    filter: saturate(0.9) blur(0.2px);
+    border-radius: 24px;
   }
   .section {
     padding: 88px 20px;
+  }
+  .hero {
+    padding-top: 0;
+  }
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 72px;
+    padding-top: 0;
+  }
+  .hero-association {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .eyebrow {
+    margin-top: 12px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .hero-tagline,
+  .hero-place,
+  .event-line,
+  .hero-actions {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  .event-line {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-cta {
+    width: 100%;
   }
   .hero h1 {
     font-size: 76px;
   }
   .hero-art {
-    height: 355px;
-    transform: scale(0.84);
+    height: 380px;
+    width: min(100%, 420px);
+    margin: 0 auto -10px;
+    transform: none;
     transform-origin: center top;
-    margin-bottom: -45px;
   }
   .node {
     font-size: 7px;

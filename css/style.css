@@ -454,12 +454,48 @@ nav a:hover:after {
   text-shadow: 0 0 12px rgba(36, 112, 255, 0.45);
 }
 .text-link {
-  font: 700 10px Inter;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 1px solid rgba(0, 61, 182, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--ink);
   text-decoration: none;
+  font: 700 10px Inter;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  box-shadow: 0 10px 24px rgba(18, 64, 152, 0.08);
+}
+.text-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 61, 182, 0.22);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 30px rgba(18, 64, 152, 0.12);
+}
+.text-link b {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), #4a9af7);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  transition: transform 0.25s ease;
+}
+.text-link:hover b {
+  transform: translateY(2px);
 }
 .hero-art {
   height: 520px;
+  width: min(100%, 620px);
+  margin-left: auto;
   position: relative;
 }
 .core {
@@ -1364,7 +1400,7 @@ h2 {
   box-shadow: var(--shadow);
 }
 .principal-photo { min-height: 250px; overflow: hidden; background: #d8e6f4; }
-.principal-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+.principal-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 .principal-copy { display: flex; flex-direction: column; justify-content: center; padding: 30px; }
 .principal-copy .eyebrow { margin: 0; font-size: 10px; }
 .principal-copy h3 { max-width: 460px; margin: 10px 0 8px; font: 700 clamp(22px, 2.6vw, 30px)/1.12 "Space Grotesk"; color: var(--ink); }
@@ -1401,6 +1437,7 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 .leader-card p,
 .leader-card h3 {
