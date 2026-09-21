@@ -1266,12 +1266,12 @@ h2 {
   border-bottom: 1px solid var(--line);
   padding: 14px 0;
   margin: 0;
-  font: 600 12px Space Grotesk;
+  font: 600 13px Space Grotesk;
   display: flex;
   gap: 13px;
 }
 .awards-list span {
-  font: 10px "DM Mono";
+  font: 13px "DM Mono";
   color: var(--blue);
 }
 .awards-list b {
