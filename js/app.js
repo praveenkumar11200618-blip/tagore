@@ -71,7 +71,7 @@ function renderApp() {
     : 0;
   el("#timeline").style.setProperty("--completed-progress", `${progress}%`);
   el("#awards-list").innerHTML = AWARD_DATA.map(
-    (a, i) => `<h3><span>0${i + 1}</span>${a}<b>🏆</b></h3>`,
+    (a, i) => `<p><span>0${i + 1}</span>${a}<b>🏆</b></p>`,
   ).join("");
   el("#management-grid").innerHTML = MANAGEMENT_DATA.map(
     (x) => `<article class="leader-card"><div class="portrait"><img src="${x[2]}" alt="${x[1]}" loading="lazy" onerror="this.style.display='none'"><span>AI</span></div><p>${x[0]}</p><h3>${x[1] || "Name"}</h3></article>`,
