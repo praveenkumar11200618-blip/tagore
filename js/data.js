@@ -13,7 +13,7 @@ const EVENT_DATA = {
   association: "iGeN Technologies, Chennai",
   contact: { name: "Mr. M. Suresh", phone: "+91 9865654274" },
 
-  announcement: "Registrations are now open. Secure your team’s place before the deadline [28.09.2026]  /  Prototype Submission [04.10.2026]",
+  announcement: "Registrations are now open. Secure your team’s place before the deadline [05.10.2026]",
 };
 const NAV_DATA = [
   ["HOME", "home"],
