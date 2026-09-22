@@ -17,7 +17,6 @@ const EVENT_DATA = {
 };
 const NAV_DATA = [
   ["HOME", "home"],
-  ["FORMAT PPT", "format"],
   ["TRACKS", "tracks"],
   ["JOURNEY", "journey"],
   ["AWARDS", "awards"],
