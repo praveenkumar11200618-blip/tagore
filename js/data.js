@@ -11,7 +11,7 @@ const EVENT_DATA = {
   address:
     "Deviyakurichi - 636 112, Thalaivasal (TK), Salem (DT), Tamil Nadu, India.",
   association: "iGeN Technologies, Chennai",
-  contact: { name: "Mr. M. Suresh", phone: "+91 9865654274" },
+  contact: { name: "Mr. M. Suresh,M.E.,", phone: "+91 9865654274" },
 
   announcement: "Registrations are now open. Secure your team’s place before the deadline [05.10.2026]",
 };
