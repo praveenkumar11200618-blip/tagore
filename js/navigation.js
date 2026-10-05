@@ -20,34 +20,23 @@ function initNavigation() {
   };
   els("#main-nav a").forEach((a) => (a.onclick = closeMenu));
   document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
-  let sections = els("main section[id]");
-  new IntersectionObserver(
-    (es) =>
-      es.forEach((e) => {
-        if (e.isIntersecting) {
-          els("#main-nav a").forEach((a) =>
-            a.classList.toggle(
-              "active",
-              a.getAttribute("href") === "#" + e.target.id,
-            ),
-          );
-        }
-      }),
-    { threshold: 0.35 },
-  ).observe
-    ? sections.forEach((s) =>
-        new IntersectionObserver(
-          (es) =>
-            es.forEach((e) => {
-              if (e.isIntersecting)
-                els("#main-nav a").forEach((a) =>
-                  a.classList.toggle("active", a.hash === "#" + e.target.id),
-                );
-            }),
-          { threshold: 0.35 },
-        ).observe(s),
-      )
-    : 0;
+  const navLinks = els("#main-nav a");
+  const sectionByHash = new Map(navLinks.map((link) => [link.hash, link]));
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visibleSection = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visibleSection) return;
+      const activeLink = sectionByHash.get(`#${visibleSection.target.id}`);
+      if (!activeLink) return;
+      navLinks.forEach((link) => link.classList.toggle("active", link === activeLink));
+    },
+    { threshold: 0.15 },
+  );
+  els("main section[id]").forEach((section) => {
+    if (sectionByHash.has(`#${section.id}`)) sectionObserver.observe(section);
+  });
   window.addEventListener(
     "scroll",
     () => el(".site-header").classList.toggle("scrolled", scrollY > 20),
