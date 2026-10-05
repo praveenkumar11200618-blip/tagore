@@ -115,11 +115,43 @@ function initTrackModal() {
 
 function initAnnouncement() {
   const banner = el("#announcement-bar");
-  const dismissedKey = "ai-fusion-announcement-dismissed";
+  const dismissedKey = "ai-fusion-registration-deadline-2026-10-06-dismissed";
   el("#announcement-message").textContent = EVENT_DATA.announcement;
-  if (sessionStorage.getItem(dismissedKey) === "true") banner.hidden = true;
+  const deadline = new Date("2026-10-06T13:00:00+05:30").getTime();
+  const countdownUnits = {
+    days: el("#announcement-days"),
+    hours: el("#announcement-hours"),
+    minutes: el("#announcement-minutes"),
+    seconds: el("#announcement-seconds"),
+  };
+  let timer;
+  const updateCountdown = () => {
+    const remaining = Math.max(0, deadline - Date.now());
+    const values = {
+      days: Math.floor(remaining / 86400000),
+      hours: Math.floor((remaining / 3600000) % 24),
+      minutes: Math.floor((remaining / 60000) % 60),
+      seconds: Math.floor((remaining / 1000) % 60),
+    };
+    Object.entries(values).forEach(([unit, value]) => {
+      countdownUnits[unit].textContent = String(value).padStart(2, "0");
+    });
+    if (remaining === 0) {
+      el("#announcement-countdown-label").textContent = "REGISTRATION DEADLINE REACHED";
+      window.clearInterval(timer);
+    }
+  };
+  updateCountdown();
+  if (Date.now() < deadline) timer = window.setInterval(updateCountdown, 1000);
+  if (sessionStorage.getItem(dismissedKey) === "true") {
+    banner.hidden = true;
+    banner.setAttribute("aria-hidden", "true");
+  } else {
+    el("#announcement-close").focus();
+  }
   el("#announcement-close").onclick = () => {
     banner.hidden = true;
+    banner.setAttribute("aria-hidden", "true");
     sessionStorage.setItem(dismissedKey, "true");
   };
 }

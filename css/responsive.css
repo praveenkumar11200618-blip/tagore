@@ -85,15 +85,6 @@ section[id] {
 }
 
 @media (max-width: 900px) {
-  .announcement-bar {
-    justify-content: flex-start;
-    text-align: left;
-    padding-right: 40px;
-  }
-  .announcement-bar p {
-    justify-content: flex-start;
-    text-align: left;
-  }
   .hero-campus-bg {
     inset: 100px -20px 20px 8%;
     opacity: 0.5;
@@ -221,22 +212,16 @@ section[id] {
 }
 
 @media (max-width: 520px) {
-  .announcement-bar {
-    min-height: 52px;
-    padding: 8px 42px 8px 12px;
-  }
-  .announcement-bar p {
-    font-size: 9px;
-    line-height: 1.35;
-    justify-content: flex-start;
-  }
-  .announcement-bar p span {
-    display: inline-block;
-    margin: 0;
-  }
-  .announcement-bar p b {
-    display: inline;
-  }
+  .announcement-modal { padding: 16px; }
+  .announcement-dialog { padding: 54px 22px 26px; border-radius: 18px; }
+  .announcement-dialog button { top: 10px; right: 10px; width: 38px; height: 38px; }
+  .announcement-label { font-size: 10px; }
+  .announcement-countdown { margin-top: 18px; }
+  .announcement-countdown-units { gap: 6px; }
+  .announcement-countdown-units span { min-width: 56px; padding: 8px 5px; }
+  .announcement-countdown-units strong { font-size: 21px; }
+  .announcement-deadline { margin-top: 20px; padding: 15px 12px; }
+  .announcement-register { width: 100%; margin-top: 16px; }
   .site-header {
     top: 62px;
     height: 58px;
@@ -336,7 +321,7 @@ section[id] {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    margin-top: 72px;
+    margin-top: 52px;
     padding-top: 0;
   }
   .hero-association {
@@ -359,16 +344,45 @@ section[id] {
     width: 100%;
   }
   .event-line {
-    gap: 12px;
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    margin-top: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: center;
+    flex-wrap: nowrap;
+  }
+  .event-line span {
+    display: block;
+  }
+  .event-line span + span {
+    border-left: none;
+    padding-left: 0;
   }
   .hero-actions {
     flex-direction: column;
-    align-items: center;
-    gap: 14px;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 18px;
   }
   .hero-cta {
     width: 100%;
+    gap: 10px;
+  }
+  .hero-cta .button,
+  .text-link {
+    width: 100%;
+    justify-content: center;
+  }
+  .text-link {
+    padding: 10px 16px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
   }
   .hero h1 {
     font-size: 76px;
@@ -571,9 +585,11 @@ section[id] {
   .hero-actions {
     flex-wrap: wrap;
     justify-content: center;
-    row-gap: 12px;
+    row-gap: 10px;
+    margin-top: 16px;
   }
-  .hero-actions .button { width: 100%; }
+  .hero-actions .button,
+  .text-link { width: 100%; }
   .countdown { justify-content: center; gap: 8px; }
   .countdown-units { gap: 7px; }
   .countdown-units > div { gap: 2px; }

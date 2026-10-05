@@ -20,9 +20,24 @@
 </head>
 
 <body>
-  <aside class="announcement-bar" id="announcement-bar" aria-label="Event announcement">
-    <p><span>IMPORTANT UPDATE:</span><b id="announcement-message"></b></p>
-    <button id="announcement-close" type="button" aria-label="Dismiss announcement">&times;</button>
+  <aside class="announcement-modal" id="announcement-bar" aria-hidden="false">
+    <div class="announcement-dialog" role="dialog" aria-modal="true" aria-labelledby="announcement-title">
+      <button id="announcement-close" type="button" aria-label="Dismiss announcement">&times;</button>
+      <p class="announcement-label">IMPORTANT UPDATE</p>
+      <h2 id="announcement-title">TEAM REGISTRATION DEADLINE EXTENDED!</h2>
+      <p class="announcement-copy" id="announcement-message"></p>
+      <div class="announcement-countdown" role="timer" aria-label="Time remaining to register">
+        <span class="announcement-countdown-label" id="announcement-countdown-label">TIME LEFT TO REGISTER</span>
+        <div class="announcement-countdown-units">
+          <span><strong id="announcement-days">00</strong><small>DAYS</small></span>
+          <span><strong id="announcement-hours">00</strong><small>HRS</small></span>
+          <span><strong id="announcement-minutes">00</strong><small>MIN</small></span>
+          <span><strong id="announcement-seconds">00</strong><small>SEC</small></span>
+        </div>
+      </div>
+      <p class="announcement-deadline">Register your team on or before <strong>October 06, 2026, at 1:00 PM.</strong></p>
+      <a class="button announcement-register" data-register href="#">REGISTER YOUR TEAM <b>→</b></a>
+    </div>
   </aside>
   <div class="page-loader" aria-label="Loading" aria-live="polite">
     <div class="loader-shell">
