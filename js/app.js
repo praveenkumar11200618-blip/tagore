@@ -115,7 +115,6 @@ function initTrackModal() {
 
 function initAnnouncement() {
   const banner = el("#announcement-bar");
-  const dismissedKey = "ai-fusion-registration-deadline-2026-10-06-dismissed";
   el("#announcement-message").textContent = EVENT_DATA.announcement;
   const deadline = new Date("2026-10-06T13:00:00+05:30").getTime();
   const countdownUnits = {
@@ -143,16 +142,11 @@ function initAnnouncement() {
   };
   updateCountdown();
   if (Date.now() < deadline) timer = window.setInterval(updateCountdown, 1000);
-  if (sessionStorage.getItem(dismissedKey) === "true") {
-    banner.hidden = true;
-    banner.setAttribute("aria-hidden", "true");
-  } else {
-    el("#announcement-close").focus();
-  }
+  el("#announcement-close").focus();
   el("#announcement-close").onclick = () => {
     banner.hidden = true;
     banner.setAttribute("aria-hidden", "true");
-    sessionStorage.setItem(dismissedKey, "true");
+    window.clearInterval(timer);
   };
 }
 
