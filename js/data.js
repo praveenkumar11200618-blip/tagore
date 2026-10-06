@@ -14,7 +14,7 @@ const EVENT_DATA = {
   contact: { name: "Mr. M. Suresh,M.E.,", phone: "+91 9865654274" },
 
   announcement:
-    "The last date for team registration has been extended from October 05, 2026 to October 06, 2026, until 1:00 PM.",
+    "The last date for team registration has been extended from October 05, 2026 to October 06, 2026, until 6:00 PM.",
 };
 const NAV_DATA = [
   ["HOME", "home"],
