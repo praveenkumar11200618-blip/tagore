@@ -116,7 +116,7 @@ function initTrackModal() {
 function initAnnouncement() {
   const banner = el("#announcement-bar");
   el("#announcement-message").textContent = EVENT_DATA.announcement;
-  const deadline = new Date("2026-10-06T13:00:00+05:30").getTime();
+  const deadline = new Date("2026-10-06T18:00:00+05:30").getTime();
   const countdownUnits = {
     days: el("#announcement-days"),
     hours: el("#announcement-hours"),
