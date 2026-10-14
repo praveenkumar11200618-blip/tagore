@@ -1,90 +1,57 @@
 function initAnimations() {
-  let reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!reduce && window.gsap) {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from(".hero-copy>*", {
-      y: 30,
-      opacity: 0,
-      stagger: 0.12,
-      duration: 0.8,
-      delay: 0.35,
-    });
-    gsap.from(".hero-art", {
-      scale: 0.75,
-      opacity: 0,
-      duration: 1,
-      delay: 0.45,
-    });
-    gsap.utils
-      .toArray(".section:not(.hero)")
-      .forEach((s) =>
-        gsap.from(s.children, {
-          scrollTrigger: { trigger: s, start: "top 82%" },
-          y: 24,
-          opacity: 0,
-          stagger: 0.08,
-          duration: 0.65,
-        }),
-      );
-    [".hero-winner-grid", ".best-team-grid"].forEach((selector) => {
-      const grid = document.querySelector(selector);
-      const cards = gsap.utils.toArray(`${selector} > article`);
-      if (grid && cards.length) {
-        gsap.from(cards, {
-          y: 22,
-          opacity: 0,
-          stagger: 0.055,
-          duration: 0.5,
-          ease: "power2.out",
-          immediateRender: false,
-          scrollTrigger: {
-            trigger: grid,
-            start: "top 86%",
-            toggleActions: "play none none none",
-            once: true,
-          },
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("motion-enabled");
+
+    const observer = new IntersectionObserver(
+      (entries, activeObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          activeObserver.unobserve(entry.target);
         });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
+    );
+
+    const revealItems = document.querySelectorAll(
+      ".hero-copy > *, .hero-art, .section:not(.hero) > *, .hero-winner-grid > article, .best-team-grid > article",
+    );
+    revealItems.forEach((item, index) => {
+      item.classList.add("motion-item");
+      item.style.setProperty("--reveal-delay", `${Math.min(index * 35, 210)}ms`);
+      if (item.closest(".hero")) {
+        requestAnimationFrame(() => item.classList.add("is-visible"));
+      } else {
+        observer.observe(item);
       }
     });
   }
-  if (!reduce) {
-    document.addEventListener("mousemove", (e) => {
-      el(".cursor-dot").style.cssText =
-        `left:${e.clientX}px;top:${e.clientY}px`;
-      el(".cursor-ring").style.cssText =
-        `left:${e.clientX}px;top:${e.clientY}px`;
-    });
-    els(".tilt,.track-card,.team-card").forEach((c) => {
-      c.addEventListener("mousemove", (e) => {
-        let r = c.getBoundingClientRect();
-        c.style.setProperty("--x", `${e.clientX - r.left}px`);
-        c.style.setProperty("--y", `${e.clientY - r.top}px`);
-      });
-      c.addEventListener("mouseenter", () => c.classList.add("hover"));
-    });
-    els(".magnetic").forEach((b) =>
-      b.addEventListener("mousemove", (e) => {
-        let r = b.getBoundingClientRect();
-        b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.1}px,${(e.clientY - r.top - r.height / 2) * 0.13}px)`;
-      }),
-    );
-    els(".magnetic").forEach((b) =>
-      b.addEventListener("mouseleave", () => (b.style.transform = "")),
-    );
+
+  if (reduceMotion || !matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    return;
   }
-  els("[data-count]").forEach((n) => {
-    let target = +n.dataset.count;
-    if (target && window.gsap)
-      ScrollTrigger.create({
-        trigger: n,
-        start: "top 90%",
-        once: true,
-        onEnter: () =>
-          gsap.to(n, {
-            innerText: target,
-            duration: 1.2,
-            snap: { innerText: 1 },
-          }),
+
+  const cursorDot = document.querySelector(".cursor-dot");
+  const cursorRing = document.querySelector(".cursor-ring");
+  if (!cursorDot || !cursorRing) return;
+
+  let pointerFrame = 0;
+  let pointerX = 0;
+  let pointerY = 0;
+  document.addEventListener(
+    "pointermove",
+    (event) => {
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (pointerFrame) return;
+      pointerFrame = requestAnimationFrame(() => {
+        const transform = `translate3d(${pointerX}px, ${pointerY}px, 0) translate(-50%, -50%)`;
+        cursorDot.style.transform = transform;
+        cursorRing.style.transform = transform;
+        pointerFrame = 0;
       });
-  });
+    },
+    { passive: true },
+  );
 }

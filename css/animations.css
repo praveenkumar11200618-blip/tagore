@@ -56,7 +56,7 @@ body:before {
     inset 0 0 0 1px rgba(255, 255, 255, 0.72),
     0 24px 80px rgba(32, 97, 181, 0.16);
   filter: saturate(0.82) contrast(0.94);
-  animation: campus-drift 18s ease-in-out infinite alternate;
+  animation: none;
 }
 
 .hero {
@@ -84,7 +84,7 @@ body:before {
     transparent 63%
   );
   transform: translateX(-110%);
-  animation: campus-sheen 7s ease-in-out infinite;
+  animation: none;
 }
 
 .hero-campus-bg:after {
@@ -97,40 +97,9 @@ body:before {
   box-shadow:
     0 0 0 26px rgba(255, 255, 255, 0.1),
     0 0 0 52px rgba(255, 255, 255, 0.06);
-  animation: campus-orbit 9s linear infinite;
+  animation: none;
 }
 
-@keyframes campus-drift {
-  from {
-    background-position:
-      center,
-      center,
-      48% 50%;
-  }
-  to {
-    background-position:
-      center,
-      center,
-      54% 50%;
-  }
-}
-
-@keyframes campus-sheen {
-  0%,
-  35% {
-    transform: translateX(-120%);
-  }
-  70%,
-  100% {
-    transform: translateX(150%);
-  }
-}
-
-@keyframes campus-orbit {
-  to {
-    transform: rotate(360deg);
-  }
-}
 .hero:after {
   content: "AI / 2026";
   position: absolute;
@@ -330,11 +299,11 @@ body:before {
       rgba(206, 226, 255, 0.08) 70%,
       #f7faff 100%
     ),
-    url("https://api.tagoreiet.ac.in/uploads/HeroBanner/1781171333501_5.jpg")
+    url("../assets/images/event/campus-hero.jpg")
       center / cover no-repeat;
   box-shadow: none;
   isolation: isolate;
-  animation: campusReveal 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: none;
 }
 
 .hero-campus-bg::before {
@@ -348,7 +317,7 @@ body:before {
     linear-gradient(90deg, rgba(124, 218, 255, 0.24) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: linear-gradient(90deg, transparent 15%, #000 67%, transparent);
-  animation: gridDrift 16s linear infinite;
+  animation: none;
 }
 
 .hero-campus-bg::after {
@@ -363,36 +332,39 @@ body:before {
   box-shadow:
     0 0 0 21px rgba(138, 222, 255, 0.12),
     0 0 50px rgba(40, 157, 255, 0.26);
-  animation: campusPulse 4s ease-in-out infinite;
+  animation: none;
+}
+
+.motion-enabled .motion-item {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition:
+    opacity 0.38s ease,
+    transform 0.38s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.motion-enabled .hero-art.motion-item {
+  transform: translate3d(0, 10px, 0);
+}
+
+.motion-enabled .motion-item.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-enabled .motion-item,
+  .motion-enabled .motion-item.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .hero-copy,
 .hero-art {
   z-index: 1;
-}
-
-@keyframes campusReveal {
-  from {
-    opacity: 0;
-    transform: scale(1.025);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes gridDrift {
-  to {
-    background-position: 42px 42px;
-  }
-}
-
-@keyframes campusPulse {
-  50% {
-    transform: scale(1.08);
-    opacity: 0.45;
-  }
 }
 
 @keyframes liveAlertBlinkRed {

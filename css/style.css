@@ -2183,8 +2183,8 @@ footer {
   position: fixed;
   pointer-events: none;
   z-index: 60;
-  left: -20px;
-  top: -20px;
+  left: 0;
+  top: 0;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   transition:
