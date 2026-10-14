@@ -39,8 +39,48 @@ function renderApp() {
   ).join("");
 }
 
+function initResultsAnnouncement() {
+  const modal = el("#results-announcement");
+  const dialog = el(".results-announcement-dialog");
+  const closeButton = el(".results-announcement-close");
+  const actions = [...dialog.querySelectorAll("a[href^='#']")];
+  const dismiss = () => {
+    modal.hidden = true;
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("announcement-open");
+  };
+
+  document.body.classList.add("announcement-open");
+  closeButton.focus();
+  closeButton.addEventListener("click", dismiss);
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) dismiss();
+  });
+  actions.forEach((action) => action.addEventListener("click", dismiss));
+  document.addEventListener("keydown", (event) => {
+    if (modal.hidden) return;
+    if (event.key === "Escape") {
+      dismiss();
+      return;
+    }
+    if (event.key !== "Tab") return;
+
+    const focusable = [closeButton, ...actions];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderApp();
   initNavigation();
   initAnimations();
+  initResultsAnnouncement();
 });
