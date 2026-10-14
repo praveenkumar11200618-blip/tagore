@@ -1,8 +1,9 @@
 function initNavigation() {
   let nav = el("#main-nav");
-  nav.innerHTML = NAV_DATA.map((x) => `<a href="#${x[1]}">${x[0]}</a>`).join(
-    "",
-  );
+  nav.innerHTML = NAV_DATA.map(
+    (x) =>
+      `<a class="${x[1] === "prize-winners" ? "nav-prize-winner" : ""}" href="#${x[1]}">${x[0]}</a>`,
+  ).join("");
   let menu = el(".menu-button");
   const closeMenu = () => {
     nav.classList.remove("open");

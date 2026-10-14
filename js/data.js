@@ -18,12 +18,78 @@ const EVENT_DATA = {
 };
 const NAV_DATA = [
   ["HOME", "home"],
-  ["FORMAT PPT", "format"],
-  ["TRACKS", "tracks"],
-  ["JOURNEY", "journey"],
-  ["AWARDS", "awards"],
+  ["PRIZE WINNERS", "prize-winners"],
+  ["BEST TEAMS", "best-teams"],
   ["LEADERSHIP", "leadership"],
   ["CONTACT", "contact"],
+];
+const BEST_TEAM_DATA = [
+  {
+    name: "MIND SPARK",
+    college: "AVS Engineering College",
+    leader: "NANDHINI.S",
+    members: ["PRIYANKA.D", "NAVEEN KUMAR .M", "VENKATA MANIKANDAN .S"],
+  },
+  {
+    name: "E RANK GOBLINS",
+    college: "Jayalakshmi Institute of Technology",
+    leader: "VALLARASU N",
+    members: ["ABISHEK V", "RAJARAJAN J", "MEENATCHI L"],
+  },
+  {
+    name: "INNOVENGERS",
+    college: "Mahendra Institute of Technology",
+    leader: "B MADHAN ARVIND",
+    members: ["MADHANKUMAR V", "JAYARAM R", "BALAJI P"],
+  },
+  {
+    name: "JARVIS",
+    college: "Mahendra Engineering College, Mallasamudram, Namakkal",
+    leader: "MONISH G",
+    members: ["M.DHARANEESWARAN", "G.KAVIARASU"],
+  },
+  {
+    name: "CIRCUIT NINJAS",
+    college: "Tagore Institute of Engineering and Technology",
+    leader: "B THIRUPATHI",
+    members: ["ARUNACHALAM P", "DEEPAKRAJ T", "VIGNESH P"],
+  },
+  {
+    name: "HOUSE OF PRANEXA",
+    college: "Tagore Institute of Engineering and Technology",
+    leader: "ABINAYA M",
+    members: ["NANDHINI K", "BRINDHA S"],
+  },
+  {
+    name: "REBEL WARRIORS",
+    college: "Tagore Institute of Engineering and Technology",
+    leader: "JAYAPRAKASH J",
+    members: ["CHANDIRABOSE J", "BOOPATHIRAJA S"],
+  },
+  {
+    name: "LOSTLINK",
+    college: "Tagore Institute of Engineering and Technology",
+    leader: "PRAVEEN. V",
+    members: ["PALANIVEL.S", "JAGAN.S", "SRI RAMANARAYANAN.S"],
+  },
+  {
+    name: "TECH WARRIORS",
+    college: "Ganesh College of Engineering",
+    leader: "NANDHINIPRIYA D",
+    members: ["RAMYA B", "MAHALAKSHMI K", "RANJITH M"],
+  },
+  {
+    name: "TEAMX",
+    college: "Tagore Institute of Engineering and Technology",
+    leader: "SAMEERUR RAHAMAN M.R",
+    members: ["GURUDEVAN T", "BALAMURALI B", "PUSHPANATHAN R"],
+  },
+  {
+    name: "ROOT LOGIC",
+    college: "Idhaya Engineering College of Women",
+    leader: "DEVA DHARSHINI M.S",
+    members: ["ABINIYA.P", "GAYATHRI.R"],
+  },
 ];
 const TRACK_DATA = [
   [
@@ -85,31 +151,6 @@ const TRACK_DATA = [
     "assets/images/tracks/industry.svg",
   ],
 ];
-// Update this agenda manually as the event programme is confirmed.
-// status accepts: "complete", "live", or "upcoming".
-const TIMELINE_DATA = [
-  ["09:00 AM", "Registration & Check-in", "upcoming", "Collect your badge, team kit and programme guide.", "Main Entrance"],
-  ["10:00 AM", "Opening & Problem Brief", "upcoming", "Kick-off, challenge briefing and team formation.", "Seminar Hall"],
-  ["11:00 AM", "Build Sprint Begins", "upcoming", "Turn your concept into a working AI prototype.", "Innovation Lab"],
-  ["01:00 PM", "Mentor Checkpoint", "upcoming", "Get feedback on feasibility, impact and your demo plan.", "Innovation Lab"],
-  ["02:30 PM", "Prototype Demo", "upcoming", "Validate your build before the final presentation.", "Demo Zone"],
-  ["03:30 PM", "Final Presentations", "upcoming", "Pitch your solution to the jury panel.", "Seminar Hall"],
-  ["04:00 PM", "Jury Deliberation", "upcoming", "Final scoring and selection of winning teams.", "Jury Room"],
-  ["04:30 PM", "Awards & Closing", "upcoming", "Celebrate the teams and take the next step together.", "Seminar Hall"],
-];
-const AWARD_DATA = [
-  "Overall champion-Team",
-  "Runner-up",
-  "Second Runner-up",
-  "Best Engineering and Technology Solution",
-  "Best Healthcare Solution",
-  "Best Agriculture Solution",
-  "Best Commerce Solution",
-  "Best Architecture Solution",
-  "Best Industry Solution",
-  "Best UI/UX",
-
-];
 const MANAGEMENT_DATA = [
   ["President", "Mr. R. MUTHUSAMY", "assets/images/leaders/PRESIDENT.png"],
   ["Secretary", "Mr. S. R. MADESHWARAN", "assets/images/leaders/SECRETARY.jpg"],
@@ -119,32 +160,4 @@ const MANAGEMENT_DATA = [
   ["Joint Secretary", "Mr. K. ARUNKUMAR", "assets/images/leaders/JOIN-SECRETARY-1.jpg"],
   ["Joint Secretary", "Mr. K. VASANTHA KUMAR", "assets/images/leaders/JOINT SECRETARY-2.jpg"],
   
-];
-const FAQ_DATA = [
-  [
-    "Who can participate?",
-    "Students from eligible colleges are welcome to participate in AI Fusion 2026.",
-  ],
-  ["What is the recommended team size?", "Teams consist of 4 members."],
-  ["What is the registration fee?", "The registration fee is ₹500 per team."],
-  [
-    "Can students from different disciplines participate?",
-    "Yes. AI Fusion is multidisciplinary and encourages diverse teams.",
-  ],
-  [
-    "What are the AI tracks?",
-    "Engineering, Healthcare, Agriculture, Commerce, Architecture and Industry.",
-  ],
-  [
-    "What happens during the hackathon?",
-    "Teams move from idea formation to prototype, demo, final pitch and judging.",
-  ],
-  [
-    "How are projects evaluated?",
-    "Projects are evaluated by the jury during the final presentation and judging stages.",
-  ],
-  [
-    "When will winners be announced?",
-    "Winner announcements take place during the awards stage.",
-  ],
 ];

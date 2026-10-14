@@ -14,49 +14,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20261006-scroll-fix" />
+  <link rel="stylesheet" href="css/style.css?v=20261014-sections-v5" />
   <link rel="stylesheet" href="css/animations.css?v=20261005" />
-  <link rel="stylesheet" href="css/responsive.css?v=20261005-hide-scrollbars" />
+  <link rel="stylesheet" href="css/responsive.css?v=20261014-sections-v5" />
 </head>
 
 <body>
-  <aside class="announcement-modal" id="announcement-bar" aria-hidden="false">
-    <div class="announcement-dialog" role="dialog" aria-modal="true" aria-labelledby="announcement-title">
-      <button id="announcement-close" type="button" aria-label="Dismiss announcement">&times;</button>
-      <p class="announcement-label">IMPORTANT UPDATE</p>
-      <h2 id="announcement-title">TEAM REGISTRATION DEADLINE EXTENDED!</h2>
-      <p class="announcement-copy" id="announcement-message"></p>
-      <div class="announcement-countdown" role="timer" aria-label="Time remaining to register">
-        <span class="announcement-countdown-label" id="announcement-countdown-label">TIME LEFT TO REGISTER</span>
-        <div class="announcement-countdown-units">
-          <span><strong id="announcement-days">00</strong><small>DAYS</small></span>
-          <span><strong id="announcement-hours">00</strong><small>HRS</small></span>
-          <span><strong id="announcement-minutes">00</strong><small>MIN</small></span>
-          <span><strong id="announcement-seconds">00</strong><small>SEC</small></span>
-        </div>
-      </div>
-      <p class="announcement-deadline">Register your team on or before <strong>October 06, 2026, at 1:00 PM.</strong></p>
-      <a class="button announcement-register" data-register href="#">REGISTER YOUR TEAM <b>→</b></a>
-    </div>
-  </aside>
-  <div class="page-loader" aria-label="Loading" aria-live="polite">
-    <div class="loader-shell">
-      <div class="loader-orb" aria-hidden="true">
-        <span class="loader-halo"></span>
-        <span class="loader-scan"></span>
-        <i></i>
-        <i></i>
-        <span class="loader-e" style="--deg:0deg"></span>
-        <span class="loader-e" style="--deg:120deg"></span>
-        <span class="loader-e" style="--deg:240deg"></span>
-        <b><img src="assets/logos/logo.gif" alt="" /></b>
-      </div>
-      <strong class="loader-wordmark">AI FUSION <em>2026</em></strong>
-      <p class="loader-status">INITIALIZING INNOVATION SYSTEM...</p>
-      <div class="loader-bar" aria-hidden="true"><i></i></div>
-      <small class="loader-pct">0%</small>
-    </div>
-  </div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
   <div class="ambient a1"></div>
@@ -67,13 +30,14 @@
       class="menu-button" aria-label="Open menu" aria-controls="main-nav" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <nav id="main-nav" aria-label="Main navigation"></nav>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a class="nav-prize-winner" href="#prize-winners">PRIZE WINNER</a>
+    </nav>
     <div class="header-association" aria-label="In association with iGen Technologies">
       <span>IN ASSOCIATION WITH</span>
       <img src="assets/images/partners/igen-technologies.jpg" alt="" />
       <strong>iGeN</strong>
     </div>
-    <a class="button button-small magnetic" data-register href="#">REGISTER NOW <b>→</b></a>
   </header>
   <main>
     <section id="home" class="hero section">
@@ -90,28 +54,9 @@
         <div class="event-line">
           <span class="event-date"></span><span class="event-time"></span>
         </div>
-        <div class="countdown" aria-label="Time remaining until AI Fusion 2026">
-          <span class="countdown-label">EVENT STARTS IN</span>
-          <div class="countdown-units" aria-live="polite">
-            <div><b id="countdown-days">00</b><small>DAYS</small></div>
-            <i>:</i>
-            <div><b id="countdown-hours">00</b><small>HOURS</small></div>
-            <i>:</i>
-            <div><b id="countdown-minutes">00</b><small>MINUTES</small></div>
-            <i>:</i>
-            <div><b id="countdown-seconds">00</b><small>SECONDS</small></div>
-          </div>
-        </div>
         <p class="hero-place"></p>
         <div class="hero-actions">
-          <div class="hero-cta">
-            <a class="button magnetic" data-register href="#">REGISTER NOW <b>→</b></a>
-            <div class="registration-deadline-pill">
-              <span>REGISTRATION DEADLINE</span>
-              <strong>OCT 06, 2026 · 1:00 PM</strong>
-            </div>
-          </div>
-          <a class="text-link" href="#about">EXPLORE HACKATHON <b>↓</b></a>
+          <a class="text-link" href="#best-teams">EXPLORE TEAMS <b>↓</b></a>
         </div>
       </div>
       <div class="hero-art" aria-label="Animated artificial intelligence core">
@@ -132,61 +77,85 @@
         <div class="hud h4"><b>01 DAY</b><small>HACKATHON</small></div>
       </div>
     </section>
-    <section id="about" class="section about">
-      <div>
-        <p class="eyebrow">01 / ABOUT</p>
-        <h2>
-          ONE HACKATHON.<br /><span>SIX DOMAINS.</span><br />INFINITE
-          POSSIBILITIES.
-        </h2>
+    <section id="prize-winners" class="section hero-winners" aria-labelledby="hero-winners-title">
+      <div class="hero-winners-heading">
+        <p class="eyebrow">AI FUSION 2026 RESULTS</p>
+        <h2 id="hero-winners-title">MEET THIS YEAR'S <span>WINNERS.</span></h2>
       </div>
-      <div class="about-copy">
-        <p>
-          Bring intelligent ideas into the real world. AI Fusion brings
-          curious minds across disciplines together for one focused day of
-          building, mentoring and meaningful innovation.
-        </p>
-        <div class="stats" id="stats"></div>
-      </div>
-    </section>
-    <section id="format" class="section format-ppt">
-      <p class="eyebrow">02 / HACKATHON FORMAT PPT</p>
-      <div class="section-heading">
-        <h2>THE EVENT<br /><span>FORMAT PPT.</span></h2>
-        <p>From spark to final pitch, every stage is designed to keep teams focused, creative, and ready to present.</p>
-      </div>
-      <div class="ppt-download-card" aria-label="Download presentation asset">
-        <div class="ppt-download-meta">
-          <span class="ppt-badge">ASSET</span>
-          <strong>AI FUSION 2026 PPT FORMAT</strong>
-        </div>
-        <div class="ppt-download-body">
-          <div class="ppt-file-icon" aria-hidden="true">PPT</div>
-          <div>
-            <p>Official presentation Format </p>
-            <small>Downloadable file</small>
+      <div class="hero-winner-grid">
+        <article class="hero-winner-card first-place">
+          <div class="winner-card-top">
+            <span class="winner-place">01 <small>1ST PRIZE</small></span>
+            <span class="winner-medal" aria-hidden="true">✦</span>
           </div>
+          <h3 class="winner-team-name">PHARMONIX</h3>
+          <div class="winner-college">
+            <img class="winner-college-logo" src="assets/logos/gmani-logo.png" alt="Gnanamani College of Technology logo" loading="lazy" />
+            <div><span class="winner-field-label">COLLEGE</span><strong>GNANAMANI COLLEGE OF TECHNOLOGY</strong></div>
+          </div>
+          <div class="winner-roster">
+            <p class="winner-field-label">TEAM LEADER</p>
+            <p class="winner-team-lead">PRABHADEVI.P</p>
+            <p class="winner-field-label winner-members-label">TEAM MEMBERS</p>
+            <ul class="winner-members">
+              <li>NIKALYA S</li>
+              <li>SUBATHRA B</li>
+              <li>VINITH D</li>
+            </ul>
+          </div>
+        </article>
+        <article class="hero-winner-card second-place">
+          <div class="winner-card-top">
+            <span class="winner-place">02 <small>2ND PRIZE</small></span>
+            <span class="winner-medal" aria-hidden="true">✦</span>
+          </div>
+          <h3 class="winner-team-name">HEALING AI</h3>
+          <div class="winner-college">
+            <img class="winner-college-logo" src="assets/logos/logo.gif" alt="Tagore Institute of Engineering and Technology logo" loading="lazy" />
+            <div><span class="winner-field-label">COLLEGE</span><strong>TAGORE INSTITUTE OF ENGINEERING AND TECHNOLOGY</strong></div>
+          </div>
+          <div class="winner-roster">
+            <p class="winner-field-label">TEAM LEADER</p>
+            <p class="winner-team-lead">KAMALI.S</p>
+            <p class="winner-field-label winner-members-label">TEAM MEMBERS</p>
+            <ul class="winner-members">
+              <li>ARIVUKARASU.C</li>
+              <li>RANGESWARAN</li>
+              <li>A. SIVARAMAN.K</li>
+            </ul>
+          </div>
+        </article>
+        <article class="hero-winner-card third-place">
+          <div class="winner-card-top">
+            <span class="winner-place">03 <small>3RD PRIZE</small></span>
+            <span class="winner-medal" aria-hidden="true">✦</span>
+          </div>
+          <h3 class="winner-team-name">TEAM RSG</h3>
+          <div class="winner-college">
+            <img class="winner-college-logo" src="assets/logos/main-logo.png" alt="Muthayammal Engineering College logo" loading="lazy" />
+            <div><span class="winner-field-label">COLLEGE</span><strong>MUTHAYAMMAL ENGINEERING COLLEGE</strong></div>
+          </div>
+          <div class="winner-roster">
+            <p class="winner-field-label">TEAM LEADER</p>
+            <p class="winner-team-lead">RAMANA.V</p>
+            <p class="winner-field-label winner-members-label">TEAM MEMBERS</p>
+            <ul class="winner-members">
+              <li>SILAMBARASAN.C</li>
+              <li>GOKUL PRIYA.S</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="best-teams" class="section best-teams" aria-labelledby="best-teams-title">
+      <div class="best-teams-heading">
+        <div>
+          <p class="eyebrow">AI FUSION 2026 SHOWCASE</p>
+          <h2 id="best-teams-title">MEET THE <span>BEST TEAMS.</span></h2>
         </div>
-        <a class="ppt-download-button" href="assets/format.pptx" download="AI-Fusion-2026-format.pptx" aria-label="Download AI Fusion 2026 presentation">DOWNLOAD FILE</a>
+        <p>Celebrating the creativity, teamwork, and ideas shared by every participating team.</p>
       </div>
-    </section>
-    <section id="fusion" class="section fusion">
-      <p class="eyebrow">03 / FUSION CORE</p>
-      <h2>WHERE IDEAS<br />MEET <span>AI.</span></h2>
-      <div class="fusion-grid" id="fusion-grid">
-        <div class="fusion-core">AI<br /><small>CORE</small></div>
-      </div>
-    </section>
-    <section id="tracks" class="section">
-      <p class="eyebrow">04 / AI TRACKS</p>
-      <div class="section-heading">
-        <h2>CHOOSE YOUR<br /><span>FRONTIER.</span></h2>
-        <p>
-          Six paths. One shared ambition: build something that moves the world
-          forward.
-        </p>
-      </div>
-      <div class="tracks-grid" id="tracks-grid"></div>
+      <div class="best-team-grid" id="best-teams-list"></div>
     </section>
     <!-- Live Arena removed
         <div class="arena-top">
@@ -208,30 +177,6 @@
         </div>
       </section>
       -->
-    <section id="journey" class="section journey">
-      <div class="journey-heading">
-        <div>
-          <p class="eyebrow">05 / EVENT JOURNEY</p>
-          <h2>ONE DAY.<br /><span>FULL MOMENTUM.</span></h2>
-        </div>
-        <div class="journey-summary">
-          <span>EVENT AGENDA</span>
-          <p>From check-in to celebration, every moment is designed to move your idea forward.</p>
-        </div>
-      </div>
-      <div class="timeline" id="timeline"></div>
-    </section>
-    <section id="awards" class="section awards">
-      <div class="prize-copy">
-        <p class="eyebrow">06 / RECOGNITION</p>
-        <h2>BUILD.<br />PRESENT.<br /><span>WIN.</span></h2>
-        <p>CASH PRIZES <b>+</b> INTERNSHIP OPPORTUNITY</p>
-      </div>
-      <div class="trophy">
-        ✦<span>AI<br />FUSION</span>
-      </div>
-      <div class="awards-list" id="awards-list"></div>
-    </section>
     <section id="leadership" class="section">
       <p class="eyebrow">07 / LEADERSHIP</p>
       <h2>MEET THE<br /><span>LEADERSHIP.</span></h2>
@@ -272,43 +217,49 @@
 
       </div>
     </article>
-    <section id="faq" class="section faq">
-      <p class="eyebrow">08 / FAQ</p>
-      <div class="section-heading">
-        <h2>GOOD QUESTIONS.<br /><span>CLEAR ANSWERS.</span></h2>
-      </div>
-      <div class="faq-list" id="faq-list"></div>
-    </section>
     <section id="contact" class="section contact">
-      <div>
+      <div class="contact-copy">
         <p class="eyebrow">09 / CONTACT</p>
         <h2>LET'S MAKE<br />IDEAS <span>REAL.</span></h2>
+        <p class="contact-intro">Need more information about AI Fusion 2026? Reach out to our event coordinator. We’ll be happy to help.</p>
+        <a class="contact-email-link" href="tel:+919865654274">CALL THE EVENT TEAM <b>→</b></a>
       </div>
       <div class="contact-card">
-        <p>EVENT CONTACT</p>
+        <div class="contact-card-heading">
+          <span class="contact-icon" aria-hidden="true">☎</span>
+          <p>EVENT COORDINATOR</p>
+        </div>
         <h3 class="contact-name"></h3>
-        <p class="principal-credentials">Assistant Professor & HEAD</p>
-        <p class="principal-bio">Dept Of [B-Tech AI&DS]</p>
-        <a class="contact-phone"></a>
-        <div>
-          <a class="button outline" id="call-link">CALL NOW</a><a class="button magnetic" data-register
-            href="#">REGISTER NOW <b>→</b></a>
+        <p class="principal-credentials">Assistant Professor &amp; Head</p>
+        <p class="principal-bio">Department of B.Tech AI &amp; Data Science</p>
+        <div class="contact-actions">
+          <a class="contact-phone" aria-label="Call event coordinator"></a>
+          <a class="button" id="call-link">CALL COORDINATOR <b>→</b></a>
         </div>
       </div>
     </section>
-    <section class="final-cta">
-      <p>YOUR IDEAS. YOUR CODE. YOUR IMPACT.</p>
-      <h2>READY TO FUSE<br />YOUR IDEA WITH AI?</h2>
-      <a class="button button-white magnetic" data-register href="#">REGISTER FOR AI FUSION 2026 <b>→</b></a>
-    </section>
   </main>
-  <footer>
-    <div>
-      <a class="brand">AI FUSION <span>2026</span></a>
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <a href="#home" class="brand"><img class="institute-logo" src="assets/logos/logo.gif"
+          alt="Tagore Institute of Engineering and Technology logo" />AI FUSION <span>2026</span></a>
       <p class="footer-tagline"></p>
+      <p class="footer-brand-note">Ideas meet intelligence. Build the future together.</p>
     </div>
-    <div class="footer-place"></div>
-    <div class="footer-links" id="footer-links"></div>
+    <div class="footer-location">
+      <p class="footer-kicker">VISIT THE CAMPUS</p>
+      <div class="footer-place"></div>
+    </div>
+    <div class="footer-navigation">
+      <p class="footer-kicker">QUICK LINKS</p>
+      <div class="footer-links" id="footer-links" role="navigation" aria-label="Footer navigation">
+        <a href="#home">Home</a>
+        <a href="#prize-winners">Prize winners</a>
+        <a href="#leadership">Leadership</a>
+        <a href="tel:+919865654274">Call coordinator</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
     <div class="student-coordinators">
       <p class="coordinator-title">STUDENT COORDINATORS</p>
       <div class="coordinator-list">
@@ -329,16 +280,10 @@
         </div>
       </div>
     </div>
-    <h1 class="credit">
+    <p class="credit">
       Developed &amp; Designed by <a href="#">Praveenkumar.P,Hakkim.N</a><br />IV-Year B.Tech (AI&amp;DS)
-    </h1>
+    </p>
   </footer>
-  <div class="modal track-modal" id="track-modal" aria-hidden="true">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="track-modal-title">
-      <button class="modal-close" id="track-modal-close" aria-label="Close track details">&times;</button>
-      <div id="track-modal-content"></div>
-    </div>
-  </div>
   <!-- Live Arena modals removed
       <div
         class="modal-box"
@@ -369,11 +314,11 @@
     -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="js/data.js?v=20260918"></script>
+  <script src="js/data.js?v=20261014-best-teams"></script>
   <script src="js/utils.js?v=20260918"></script>
-  <script src="js/animations.js?v=20260918"></script>
-  <script src="js/navigation.js?v=20261006-scroll-nav"></script>
-  <script src="js/app.js?v=20261005"></script>
+  <script src="js/animations.js?v=20261014-best-teams-ui-v2"></script>
+  <script src="js/navigation.js?v=20261014-best-teams-ui-v2"></script>
+  <script src="js/app.js?v=20261014-best-teams-ui-v2"></script>
 </body>
 
 </html>
